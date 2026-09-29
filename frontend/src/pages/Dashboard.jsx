@@ -23,7 +23,7 @@ function Dashboard() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get('https://job-application-tracker-qp4s.onrender.com/api/jobs', {
+      const res = await axios.get('https://job-application-tracker-qp4s.onrender.com//api/applications', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setJobs(res.data);
@@ -36,8 +36,8 @@ function Dashboard() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        'https://job-application-tracker-qp4s.onrender.com/api/jobs',
-        { company, position, status },
+        'https://job-application-tracker-qp4s.onrender.com/api/applications',
+        { company, role: position, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setJobs([...jobs, res.data]);

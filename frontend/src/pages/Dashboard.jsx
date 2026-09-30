@@ -37,7 +37,7 @@ function Dashboard() {
     try {
       const res = await axios.post(
         'https://job-application-tracker-qp4s.onrender.com/api/applications',
-        { company, role: position, status },
+        { company, role: position, status, appliedDate: new Date().toISOString().split('T')[0] },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setJobs([...jobs, res.data]);

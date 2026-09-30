@@ -23,7 +23,7 @@ function Dashboard() {
 
   const fetchJobs = async () => {
     try {
-      const res = await axios.get('https://job-application-tracker-qp4s.onrender.com//api/applications', {
+      const res = await axios.get('https://job-application-tracker-qp4s.onrender.com/api/applications', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setJobs(res.data);
